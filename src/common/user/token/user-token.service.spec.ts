@@ -17,16 +17,19 @@ describe('UserTokenService', () => {
     });
 
     it('(await getToken()) must be an instance of UserToken', async () => {
+        expect.assertions(1);
         const token = await service.getToken();
         expect(token).toBeInstanceOf(UserToken);
     });
 
     it('(await getToken()).token must be a string', async () => {
+        expect.assertions(1);
         const { token } = await service.getToken();
         expect(typeof token).toBe('string');
     });
 
     it('(await getToken()).token.length must be 32', async () => {
+        expect.assertions(1);
         const { token: { length } } = await service.getToken();
         expect(length).toEqual(32);
     });
